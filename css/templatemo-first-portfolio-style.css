@@ -1039,7 +1039,10 @@ body {
   width: 64px;
   height: 64px;
   border-radius: 18px;
-  object-fit: cover;
+  object-fit: contain;
+  padding: 6px;
+  background: #f7f9fc;
+  border: 1px solid var(--border-color);
 }
 
 .app-card .carousel {
@@ -1053,6 +1056,23 @@ body {
   width: 100%;
   height: 220px;
   object-fit: cover;
+  object-position: center top;
+}
+
+.hero-image,
+.about-image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-image {
+  max-height: 480px;
+  padding: 12px;
+}
+
+.about-image {
+  max-height: 420px;
+  border-radius: 24px;
 }
 
 .app-card-actions {
