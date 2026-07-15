@@ -865,6 +865,259 @@ a:hover {
   background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
 }
 
+.product-hero {
+  min-height: 760px;
+  padding-bottom: 112px;
+}
+
+.product-hero .hero-text {
+  max-width: 680px;
+}
+
+.product-icon {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 28px;
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.12);
+  height: 112px;
+  margin-bottom: 28px;
+  object-fit: contain;
+  padding: 10px;
+  width: 112px;
+}
+
+.product-hero h1 {
+  margin-bottom: 22px;
+}
+
+.product-hero .status-badge {
+  margin-bottom: 18px;
+}
+
+.product-hero-stage {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 560px;
+  position: relative;
+}
+
+.product-hero-phone {
+  width: min(290px, 78vw);
+  z-index: 2;
+}
+
+.product-hero-card {
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(229, 235, 243, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.1);
+  max-width: 240px;
+  padding: 22px;
+  position: absolute;
+  right: 0;
+  top: 78px;
+  z-index: 3;
+}
+
+.product-hero-card strong {
+  color: var(--dark-color);
+  display: block;
+  font-size: 18px;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.product-hero-card span {
+  color: var(--p-color);
+  display: block;
+  font-size: 14px;
+}
+
+.product-page .hero-button-group .play-btn {
+  gap: 8px;
+}
+
+.product-gallery {
+  margin-top: -62px;
+  padding-bottom: 52px;
+  position: relative;
+  z-index: 4;
+}
+
+.gallery-panel {
+  background:
+    radial-gradient(circle at 16% 12%, rgba(37, 99, 235, 0.14), transparent 30%),
+    radial-gradient(circle at 84% 88%, rgba(20, 184, 166, 0.15), transparent 32%),
+    #eef4fb;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 20px 52px rgba(15, 23, 42, 0.08);
+  padding: 34px;
+}
+
+.gallery-grid {
+  align-items: center;
+  display: grid;
+  gap: 28px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-items: center;
+}
+
+.gallery-phone {
+  width: min(250px, 100%);
+}
+
+.gallery-phone:nth-child(1) {
+  transform: rotate(-4deg);
+}
+
+.gallery-phone:nth-child(2) {
+  width: min(280px, 100%);
+}
+
+.gallery-phone:nth-child(3) {
+  transform: rotate(4deg);
+}
+
+.product-copy-grid {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 28px;
+}
+
+.product-copy-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.product-copy-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.product-copy-card p {
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+.product-features,
+.product-status,
+.product-faq {
+  background: var(--section-bg-color);
+  border-bottom: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-color);
+}
+
+.feature-card.product-feature-card {
+  min-height: 238px;
+}
+
+.product-tech-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.screenshot-stage {
+  align-items: center;
+  background:
+    radial-gradient(circle at 20% 18%, rgba(20, 184, 166, 0.14), transparent 30%),
+    radial-gradient(circle at 78% 78%, rgba(37, 99, 235, 0.13), transparent 34%),
+    #f8fbff;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  min-height: 720px;
+  padding: 42px;
+}
+
+.screenshot-stage .phone-mockup {
+  width: min(340px, 82vw);
+}
+
+.status-panel {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 16px 42px rgba(15, 23, 42, 0.06);
+  display: flex;
+  gap: 22px;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.status-panel h2 {
+  margin-bottom: 8px;
+}
+
+.status-panel p {
+  margin-bottom: 0;
+}
+
+.faq-accordion {
+  display: grid;
+  gap: 14px;
+}
+
+.faq-item {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.faq-button {
+  align-items: center;
+  background: #ffffff;
+  border: 0;
+  color: var(--dark-color);
+  display: flex;
+  font-size: 17px;
+  font-weight: 800;
+  justify-content: space-between;
+  padding: 20px 22px;
+  text-align: left;
+  width: 100%;
+}
+
+.faq-button i {
+  color: var(--secondary-color);
+  font-size: 20px;
+  margin-left: 16px;
+  transition: transform 0.24s ease;
+}
+
+.faq-button[aria-expanded="true"] i {
+  transform: rotate(180deg);
+}
+
+.faq-body {
+  border-top: 1px solid var(--border-color);
+  padding: 18px 22px 22px;
+}
+
+.faq-body p {
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+.product-privacy-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.product-nav-home {
+  align-items: center;
+  display: inline-flex;
+  gap: 7px;
+}
+
 .privacy-grid {
   display: grid;
   gap: 16px;
@@ -1078,6 +1331,34 @@ a:hover {
   .privacy-grid {
     grid-template-columns: 1fr;
   }
+
+  .product-hero-stage {
+    min-height: 500px;
+  }
+
+  .product-hero-card {
+    right: 18px;
+    top: 42px;
+  }
+
+  .gallery-grid,
+  .product-copy-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-phone:nth-child(1),
+  .gallery-phone:nth-child(3) {
+    transform: none;
+  }
+
+  .product-tech-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .status-panel {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -1132,6 +1413,40 @@ a:hover {
 
   .app-phone-wrap {
     min-height: 390px;
+  }
+
+  .product-icon {
+    height: 92px;
+    width: 92px;
+  }
+
+  .product-hero-card {
+    margin-top: 18px;
+    max-width: 100%;
+    position: relative;
+    right: auto;
+    top: auto;
+  }
+
+  .product-hero-stage {
+    display: block;
+    min-height: 0;
+    text-align: center;
+  }
+
+  .product-hero-phone {
+    margin-left: auto;
+    margin-right: auto;
+    width: min(250px, 78vw);
+  }
+
+  .gallery-panel {
+    padding: 24px;
+  }
+
+  .screenshot-stage {
+    min-height: 560px;
+    padding: 28px;
   }
 }
 
@@ -1245,6 +1560,19 @@ a:hover {
   .app-phone-wrap {
     min-height: 350px;
     padding: 22px;
+  }
+
+  .product-tech-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .product-privacy-actions {
+    flex-direction: column;
+  }
+
+  .product-privacy-actions .btn,
+  .status-panel .btn {
+    width: 100%;
   }
 
   .footer-bottom {
