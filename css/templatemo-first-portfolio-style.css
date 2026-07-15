@@ -168,6 +168,7 @@ a:hover {
   justify-content: center;
   min-height: 48px;
   padding: 12px 22px;
+  text-align: center;
 }
 
 .custom-btn:hover,
@@ -250,6 +251,54 @@ a:hover {
   margin-right: 14px;
   padding-left: 0;
   padding-right: 0;
+}
+
+.nav-apps-item {
+  position: relative;
+}
+
+.apps-dropdown {
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(229, 235, 243, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.12);
+  display: grid;
+  gap: 2px;
+  left: 50%;
+  list-style: none;
+  margin: 0;
+  min-width: 230px;
+  opacity: 0;
+  padding: 10px;
+  pointer-events: none;
+  position: absolute;
+  top: 100%;
+  transform: translate(-50%, 8px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 30;
+}
+
+.nav-apps-item:hover .apps-dropdown,
+.nav-apps-item:focus-within .apps-dropdown {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+.apps-dropdown a {
+  border-radius: 8px;
+  color: #4b5563;
+  display: block;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.25;
+  padding: 10px 12px;
+}
+
+.apps-dropdown a:hover,
+.apps-dropdown a:focus {
+  background: var(--soft-blue);
+  color: var(--secondary-color);
 }
 
 .navbar-nav .nav-link {
@@ -432,13 +481,6 @@ a:hover {
   min-width: 148px;
 }
 
-.hero-phone-stage {
-  height: 560px;
-  margin-left: auto;
-  max-width: 610px;
-  position: relative;
-}
-
 .phone-mockup {
   aspect-ratio: 9 / 19.5;
   background: #0f172a;
@@ -468,49 +510,6 @@ a:hover {
   object-fit: contain;
   object-position: center;
   width: 100%;
-}
-
-.hero-phone {
-  position: absolute;
-  transition: transform 0.35s ease;
-  width: 190px;
-}
-
-.hero-phone:hover {
-  transform: translateY(-10px) rotate(0deg) scale(1.02);
-  z-index: 5;
-}
-
-.hero-phone-one {
-  left: 12%;
-  top: 12px;
-  transform: rotate(-8deg);
-  width: 214px;
-  z-index: 3;
-}
-
-.hero-phone-two {
-  left: 39%;
-  top: 82px;
-  transform: rotate(6deg);
-  width: 220px;
-  z-index: 4;
-}
-
-.hero-phone-three {
-  left: 2%;
-  top: 200px;
-  transform: rotate(8deg);
-  width: 176px;
-  z-index: 2;
-}
-
-.hero-phone-four {
-  right: 2%;
-  top: 246px;
-  transform: rotate(-7deg);
-  width: 168px;
-  z-index: 1;
 }
 
 .stats-section {
@@ -567,17 +566,17 @@ a:hover {
   position: relative;
 }
 
-.about-phone-main {
-  flex: 0 0 220px;
-  transform: rotate(-3deg);
-  z-index: 2;
-}
-
 .about-tech-panel {
   display: grid;
   gap: 12px;
   max-width: 220px;
   z-index: 2;
+}
+
+.about-visual-clean .about-tech-panel {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 430px;
+  width: 100%;
 }
 
 .quality-chip {
@@ -866,8 +865,8 @@ a:hover {
 }
 
 .product-hero {
-  min-height: 760px;
-  padding-bottom: 112px;
+  min-height: 700px;
+  padding-bottom: 86px;
 }
 
 .product-hero .hero-text {
@@ -896,15 +895,67 @@ a:hover {
 
 .product-hero-stage {
   align-items: center;
+  background:
+    radial-gradient(circle at 28% 18%, rgba(37, 99, 235, 0.14), transparent 32%),
+    radial-gradient(circle at 78% 82%, rgba(20, 184, 166, 0.14), transparent 34%),
+    rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(229, 235, 243, 0.78);
+  border-radius: 8px;
+  box-shadow: 0 18px 52px rgba(15, 23, 42, 0.06);
   display: flex;
   justify-content: center;
-  min-height: 560px;
+  min-height: 430px;
+  overflow: hidden;
+  padding: 34px;
   position: relative;
 }
 
-.product-hero-phone {
-  width: min(290px, 78vw);
-  z-index: 2;
+.product-signal-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 420px;
+  width: 100%;
+}
+
+.product-signal-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(229, 235, 243, 0.92);
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.07);
+  min-height: 128px;
+  padding: 18px;
+}
+
+.product-signal-card i {
+  align-items: center;
+  background: var(--soft-blue);
+  border-radius: 8px;
+  color: var(--secondary-color);
+  display: inline-flex;
+  font-size: 20px;
+  height: 38px;
+  justify-content: center;
+  margin-bottom: 14px;
+  width: 38px;
+}
+
+.product-signal-card strong,
+.product-signal-card span {
+  display: block;
+}
+
+.product-signal-card strong {
+  color: var(--dark-color);
+  font-size: 17px;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.product-signal-card span {
+  color: var(--p-color);
+  font-size: 14px;
+  line-height: 1.45;
 }
 
 .product-hero-card {
@@ -912,12 +963,10 @@ a:hover {
   border: 1px solid rgba(229, 235, 243, 0.9);
   border-radius: 8px;
   box-shadow: 0 22px 60px rgba(15, 23, 42, 0.1);
-  max-width: 240px;
+  grid-column: span 2;
+  max-width: none;
   padding: 22px;
-  position: absolute;
-  right: 0;
-  top: 78px;
-  z-index: 3;
+  position: static;
 }
 
 .product-hero-card strong {
@@ -939,8 +988,8 @@ a:hover {
 }
 
 .product-gallery {
-  margin-top: -62px;
-  padding-bottom: 52px;
+  margin-top: -38px;
+  padding-bottom: 64px;
   position: relative;
   z-index: 4;
 }
@@ -953,31 +1002,33 @@ a:hover {
   border: 1px solid var(--border-color);
   border-radius: 8px;
   box-shadow: 0 20px 52px rgba(15, 23, 42, 0.08);
-  padding: 34px;
+  padding: 38px;
 }
 
 .gallery-grid {
   align-items: center;
   display: grid;
-  gap: 28px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  justify-items: center;
+  gap: 34px;
+  grid-template-columns: minmax(220px, 310px) minmax(0, 1fr);
+  justify-content: center;
+  justify-items: start;
 }
 
 .gallery-phone {
-  width: min(250px, 100%);
+  justify-self: center;
+  width: min(250px, 70vw);
 }
 
-.gallery-phone:nth-child(1) {
-  transform: rotate(-4deg);
+.gallery-copy {
+  max-width: 560px;
 }
 
-.gallery-phone:nth-child(2) {
-  width: min(280px, 100%);
+.gallery-copy h2 {
+  margin-bottom: 14px;
 }
 
-.gallery-phone:nth-child(3) {
-  transform: rotate(4deg);
+.gallery-copy p {
+  margin-bottom: 0;
 }
 
 .product-copy-grid {
@@ -1018,24 +1069,6 @@ a:hover {
 
 .product-tech-grid {
   grid-template-columns: repeat(5, minmax(0, 1fr));
-}
-
-.screenshot-stage {
-  align-items: center;
-  background:
-    radial-gradient(circle at 20% 18%, rgba(20, 184, 166, 0.14), transparent 30%),
-    radial-gradient(circle at 78% 78%, rgba(37, 99, 235, 0.13), transparent 34%),
-    #f8fbff;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  min-height: 720px;
-  padding: 42px;
-}
-
-.screenshot-stage .phone-mockup {
-  width: min(340px, 82vw);
 }
 
 .status-panel {
@@ -1263,17 +1296,6 @@ a:hover {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  .hero-phone-stage {
-    height: 520px;
-  }
-
-  .hero-phone-one {
-    left: 5%;
-  }
-
-  .hero-phone-two {
-    left: 38%;
-  }
 }
 
 @media screen and (max-width: 991px) {
@@ -1304,16 +1326,27 @@ a:hover {
     margin-left: 0;
   }
 
+  .apps-dropdown {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    left: auto;
+    min-width: 0;
+    opacity: 1;
+    padding: 0 0 8px 18px;
+    pointer-events: auto;
+    position: static;
+    transform: none;
+  }
+
+  .apps-dropdown a {
+    padding: 8px 0;
+  }
+
   .hero {
     min-height: 0;
     padding-bottom: 94px;
     padding-top: 150px;
-  }
-
-  .hero-phone-stage {
-    height: 520px;
-    margin-left: 0;
-    max-width: 560px;
   }
 
   .stats-grid {
@@ -1332,23 +1365,14 @@ a:hover {
     grid-template-columns: 1fr;
   }
 
-  .product-hero-stage {
-    min-height: 500px;
-  }
-
-  .product-hero-card {
-    right: 18px;
-    top: 42px;
-  }
-
   .gallery-grid,
   .product-copy-grid {
     grid-template-columns: 1fr;
   }
 
-  .gallery-phone:nth-child(1),
-  .gallery-phone:nth-child(3) {
-    transform: none;
+  .gallery-grid {
+    justify-items: center;
+    text-align: center;
   }
 
   .product-tech-grid {
@@ -1369,32 +1393,6 @@ a:hover {
 
   .hero-subtitle {
     font-size: 17px;
-  }
-
-  .hero-phone-stage {
-    height: 470px;
-  }
-
-  .hero-phone-one {
-    left: 3%;
-    width: 180px;
-  }
-
-  .hero-phone-two {
-    left: 40%;
-    top: 66px;
-    width: 184px;
-  }
-
-  .hero-phone-three {
-    top: 208px;
-    width: 150px;
-  }
-
-  .hero-phone-four {
-    right: 1%;
-    top: 240px;
-    width: 142px;
   }
 
   .about-visual {
@@ -1420,34 +1418,23 @@ a:hover {
     width: 92px;
   }
 
-  .product-hero-card {
-    margin-top: 18px;
-    max-width: 100%;
-    position: relative;
-    right: auto;
-    top: auto;
-  }
-
   .product-hero-stage {
-    display: block;
     min-height: 0;
-    text-align: center;
+    padding: 24px;
   }
 
-  .product-hero-phone {
-    margin-left: auto;
-    margin-right: auto;
-    width: min(250px, 78vw);
+  .product-signal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-hero-card {
+    grid-column: auto;
   }
 
   .gallery-panel {
     padding: 24px;
   }
 
-  .screenshot-stage {
-    min-height: 560px;
-    padding: 28px;
-  }
 }
 
 @media screen and (max-width: 575px) {
@@ -1551,6 +1538,10 @@ a:hover {
 
   .app-card {
     padding: 20px;
+  }
+
+  .about-visual-clean .about-tech-panel {
+    grid-template-columns: 1fr;
   }
 
   .app-card-header {
